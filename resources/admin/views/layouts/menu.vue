@@ -63,7 +63,7 @@
             </ul>
             <div>
                 <ul class="nav nav-tabs" role="tablist">
-                    <li><a href="#!/main/admin/edit/1">个人资料</a></li>
+                    <li><a href="#">个人资料</a></li>
                     <li class="divider"></li>
                     <li><a @click="logout">退出</a></li>
                 </ul>
@@ -96,63 +96,63 @@
                         <li><a v-link="{name:'category_edit'}">添加分类</a></li>
                     </ul>
                 </li>
-                <li>
-                    <a href="../widgets.html">
-                        <i class="fa fa-th"></i> <span>Widgets</span>
-                <span class="pull-right-container">
-                  <small class="label pull-right bg-green">new</small>
-                </span>
-                    </a>
-                </li>
-                <li class="treeview">
-                    <a href="#">
-                        <i class="fa fa-pie-chart"></i>
-                        <span>Charts</span>
-                <span class="pull-right-container">
-                  <i class="fa fa-angle-left pull-right"></i>
-                </span>
-                    </a>
-                    <ul class="treeview-menu">
-                        <li><a href="../charts/chartjs.html">ChartJS</a></li>
-                        <li><a href="../charts/morris.html">Morris</a></li>
-                        <li><a href="../charts/flot.html">Flot</a></li>
-                        <li><a href="../charts/inline.html">Inline charts</a></li>
-                    </ul>
-                </li>
+                <!--<li>-->
+                    <!--<a href="../widgets.html">-->
+                        <!--<i class="fa fa-th"></i> <span>Widgets</span>-->
+                <!--<span class="pull-right-container">-->
+                  <!--<small class="label pull-right bg-green">new</small>-->
+                <!--</span>-->
+                    <!--</a>-->
+                <!--</li>-->
+                <!--<li class="treeview">-->
+                    <!--<a href="#">-->
+                        <!--<i class="fa fa-pie-chart"></i>-->
+                        <!--<span>Charts</span>-->
+                <!--<span class="pull-right-container">-->
+                  <!--<i class="fa fa-angle-left pull-right"></i>-->
+                <!--</span>-->
+                    <!--</a>-->
+                    <!--<ul class="treeview-menu">-->
+                        <!--<li><a href="../charts/chartjs.html">ChartJS</a></li>-->
+                        <!--<li><a href="../charts/morris.html">Morris</a></li>-->
+                        <!--<li><a href="../charts/flot.html">Flot</a></li>-->
+                        <!--<li><a href="../charts/inline.html">Inline charts</a></li>-->
+                    <!--</ul>-->
+                <!--</li>-->
 
-                <li class="treeview">
-                    <a href="#">
-                        <i class="fa fa-share"></i> <span>Multilevel</span>
-                <span class="pull-right-container">
-                  <i class="fa fa-angle-left pull-right"></i>
-                </span>
-                    </a>
-                    <ul class="treeview-menu">
-                        <li><a href="#">Level One</a></li>
-                        <li>
-                            <a href="#">Level One
-                    <span class="pull-right-container">
-                      <i class="fa fa-angle-left pull-right"></i>
-                    </span>
-                            </a>
-                            <ul class="treeview-menu">
-                                <li><a href="#">Level Two</a></li>
-                                <li>
-                                    <a href="#">Level Two
-                        <span class="pull-right-container">
-                          <i class="fa fa-angle-left pull-right"></i>
-                        </span>
-                                    </a>
-                                    <ul class="treeview-menu">
-                                        <li><a href="#">Level Three</a></li>
-                                        <li><a href="#">Level Three</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-                        <li><a href="#">Level One</a></li>
-                    </ul>
-                </li>
+                <!--<li class="treeview">-->
+                    <!--<a href="#">-->
+                        <!--<i class="fa fa-share"></i> <span>Multilevel</span>-->
+                <!--<span class="pull-right-container">-->
+                  <!--<i class="fa fa-angle-left pull-right"></i>-->
+                <!--</span>-->
+                    <!--</a>-->
+                    <!--<ul class="treeview-menu">-->
+                        <!--<li><a href="#">Level One</a></li>-->
+                        <!--<li>-->
+                            <!--<a href="#">Level One-->
+                    <!--<span class="pull-right-container">-->
+                      <!--<i class="fa fa-angle-left pull-right"></i>-->
+                    <!--</span>-->
+                            <!--</a>-->
+                            <!--<ul class="treeview-menu">-->
+                                <!--<li><a href="#">Level Two</a></li>-->
+                                <!--<li>-->
+                                    <!--<a href="#">Level Two-->
+                        <!--<span class="pull-right-container">-->
+                          <!--<i class="fa fa-angle-left pull-right"></i>-->
+                        <!--</span>-->
+                                    <!--</a>-->
+                                    <!--<ul class="treeview-menu">-->
+                                        <!--<li><a href="#">Level Three</a></li>-->
+                                        <!--<li><a href="#">Level Three</a></li>-->
+                                    <!--</ul>-->
+                                <!--</li>-->
+                            <!--</ul>-->
+                        <!--</li>-->
+                        <!--<li><a href="#">Level One</a></li>-->
+                    <!--</ul>-->
+                <!--</li>-->
             </ul>
         </section>
     </aside>
