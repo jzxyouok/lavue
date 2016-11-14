@@ -2,35 +2,23 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Repositories\CategoryRepository;
-use App\Services\CategoryService;
+use App\Repositories\AdminRepository;
+use App\Services\AdminService;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-class CategoryController extends Controller
+class AdminController extends Controller
 {
+    protected $adminService;
+    
+    protected $adminRepository;
 
-    protected $categoryRepository;
-    protected $categoryService;
-
-    /**
-     * CategoryController constructor.
-     * @param CategoryRepository $categoryRepository
-     * @param CategoryService $categoryService
-     */
-    public function __construct(CategoryRepository $categoryRepository, CategoryService $categoryService)
+    public function __construct(AdminService $adminService, AdminRepository $adminRepository)
     {
-        $this->categoryRepository = $categoryRepository;
-        $this->categoryService = $categoryService;
-    }
-
-    public function all()
-    {
-        $categories = $this->categoryRepository->all();
-        
-        return $this->responseAll($categories);
+        $this->adminService = $adminService;
+        $this->adminRepository = $adminRepository;
     }
 
     /**
@@ -40,11 +28,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $categories = $this->categoryRepository->paginate();
-
-        $count = $this->categoryRepository->getTotal();
-
-        return $this->responsePagination($categories, $count);
+        //
     }
 
     /**
@@ -54,7 +38,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-
+        //
     }
 
     /**
@@ -65,14 +49,7 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        $data = [
-            'name' => $request->get('name'),
-            'parent_id' => $request->get('category_id'),
-        ];
-
-        $this->categoryService->add($data);
-
-        return successJson();
+        //
     }
 
     /**
@@ -83,9 +60,9 @@ class CategoryController extends Controller
      */
     public function show($id)
     {
-        $item = $this->categoryRepository->find($id);
+        $user = $this->adminRepository->find($id);
         
-        return successJson($item);
+        return successJson($user);
     }
 
     /**
@@ -96,7 +73,7 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
-        
+        //
     }
 
     /**
@@ -108,13 +85,8 @@ class CategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $data = [
-            'name' => $request->get('name'),
-            'parent_id' => $request->get('category_id'),
-        ];
-
-        $this->categoryService->update($id, $data);
-
+        $this->adminService->update($id, $request->only(['username', 'password', 'new_password']));
+        
         return successJson();
     }
 
@@ -126,8 +98,6 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        $this->categoryService->delete($id);
-
-        return successJson();
+        //
     }
 }

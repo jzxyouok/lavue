@@ -7,7 +7,10 @@ use Auth;
 
 class ArticleService
 {
-    
+
+    /**
+     * @var ArticleRepository $articleRepository
+     */
     protected $articleRepository;
 
     public function __construct(ArticleRepository $articleRepository)
@@ -24,7 +27,7 @@ class ArticleService
         $data['admin_id'] = Auth::user()->id;
         $data['last_user_id'] = 0;
         
-        $this->articleRepository->add($data);
+        $this->articleRepository->create($data);
     }
 
     public function updateById($id, $data)

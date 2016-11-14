@@ -24,6 +24,7 @@ export default function routeMap(router) {
                     component: require('./views/article/edit.vue'),
                     auth: true
                 },
+
                 '/category': {
                     name: 'category',
                     component: require('./views/category/index.vue'),
@@ -37,6 +38,12 @@ export default function routeMap(router) {
                 '/category/edit/:id': {
                     name: 'category_update',
                     component: require('./views/category/edit.vue'),
+                    auth: true
+                },
+
+                '/admin/edit/:id': {
+                    name: 'admin_update',
+                    component: require('./views/admin/edit.vue'),
                     auth: true
                 }
             }

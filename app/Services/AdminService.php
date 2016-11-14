@@ -9,10 +9,22 @@ namespace App\Services;
 
 use App\Events\AdminLogin;
 use App\Models\Admin;
+use App\Repositories\AdminRepository;
 use Auth;
 
 class AdminService
 {
+    
+    protected $adminRepository;
+
+    /**
+     * AdminService constructor.
+     * @param $adminRepository
+     */
+    public function __construct(AdminRepository $adminRepository)
+    {
+        $this->adminRepository = $adminRepository;
+    }
 
     public function login($username, $password)
     {
@@ -52,6 +64,17 @@ class AdminService
     public function logout()
     {
         Auth::guard('admin')->logout();
+    }
+
+    public function update($id, $data)
+    {
+        if (Auth::guard('admin')->attempt(['username' => $data['username'], 'password' => $data['password']])) {
+            $data['password'] = bcrypt($data['new_password']);
+            unset($data['new_password']);
+            $this->adminRepository->updateById($id, $data);
+        } else {
+            throw new \Exception('帐号或密码错误', 402);
+        }
     }
 
 }

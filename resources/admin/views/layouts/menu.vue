@@ -57,13 +57,13 @@
                 </li>
                 <li class="pull-left info">
                     <p class="">
-                        <strong>{{ username }}</strong>
+                        <strong>{{ user.username }}</strong>
                     </p>
                 </li>
             </ul>
             <div>
                 <ul class="nav nav-tabs" role="tablist">
-                    <li><a href="#">个人资料</a></li>
+                    <li><a v-link="{name:'admin_update', params:{id:user.userId}}">个人资料</a></li>
                     <li class="divider"></li>
                     <li><a @click="logout">退出</a></li>
                 </ul>
@@ -161,7 +161,7 @@
     export default {
         data: function () {
             return {
-                username: Auth.getUser().username,
+                user: Auth.getUser(),
             }
         },
         methods: {

@@ -35,30 +35,10 @@ class ArticleRepository extends EloquentRepository
     {
         return $this->model->count();
     }
-
-    public function find($id, $field = ['*'])
-    {
-        return $this->model->find($id, $field);
-    }
-
-    public function updateById($id, $data)
-    {
-        $this->model->where('id', $id)->update($data);
-    }
-
-    public function delete($id)
-    {
-        $this->model->where('id', $id)->delete();
-    }
-
+    
     public function deleteByCategoryId($categoryId)
     {
         $this->model->where('category_id', $categoryId)->delete();
-    }
-
-    public function add($data)
-    {
-        $this->model->create($data);
     }
 
 }

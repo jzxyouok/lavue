@@ -40,25 +40,5 @@ class CategoryRepository extends EloquentRepository
     {
         return $this->model->count();
     }
-
-    public function delete($id)
-    {
-        $this->model->where('id', $id)->delete();
-    }
-
-    public function create($data)
-    {
-        return $this->model->create($data);
-    }
-
-    public function one($id)
-    {
-        return $this->model->find($id);
-    }
-
-    public function update($id, $data)
-    {
-        return $this->model->where('id', $id)->update($data);
-    }
     
 }

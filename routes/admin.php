@@ -19,4 +19,6 @@ $router->group(['middleware' => ['auth:admin']], function (\Illuminate\Contracts
     
     $router->get('category/all', 'CategoryController@all');
     $router->resource('category', 'CategoryController');
+
+    $router->resource('admin', 'AdminController');
 });

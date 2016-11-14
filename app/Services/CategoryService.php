@@ -37,7 +37,7 @@ class CategoryService
     {
         $this->validate($data, $id);
         
-        return $this->categoryRepository->update($id, $data);
+        $this->categoryRepository->updateById($id, $data);
     }
 
     public function delete($id)
