@@ -27,7 +27,7 @@
 </style>
 
 <template>
-    <div v-show="showLoading">
+    <div v-show="isShow">
         <div class="mask"></div>
         <div class="loader">
             <div class="dot"></div>
@@ -41,7 +41,7 @@
     import Dynamics from 'dynamics.js';
     export default {
         props: {
-            showLoading: {
+            isShow: {
                 required: false,
                 type: Boolean,
                 default: false

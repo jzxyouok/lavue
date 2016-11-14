@@ -42,7 +42,6 @@
     import Util from '../../lib/util';
 
     export default {
-
         created: function () {
             if (this.$route.params.id) {
                 let self = this;
@@ -53,13 +52,12 @@
         },
         data: function () {
             return {
-                user: {},
-                isUpdate: this.$route.params.id
+                user: {}
             }
         },
         methods: {
             submit: function () {
-                if (this.isUpdate) {
+                if (this.$route.params.id) {
                     this.$http.put('admin/' + this.$route.params.id, this.user).then(function () {
                         Util.successAndRedirect(self, '', '更新成功');
                     })
@@ -70,6 +68,5 @@
                 }
             }
         }
-
     }
 </script>

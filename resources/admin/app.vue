@@ -1,7 +1,7 @@
 <template>
     <div>
         <router-view></router-view>
-        <loading :show-loading="showLoading"></loading>
+        <loading :is-show="showLoading"></loading>
     </div>
 </template>
 

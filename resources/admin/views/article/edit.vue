@@ -98,8 +98,7 @@
                 },
                 editor: {
                     blur: undefined
-                },
-                isUpdate: this.$route.params.id
+                }
             }
         },
         methods: {
@@ -109,7 +108,7 @@
                 this.$validate(function () {
                     self.editor.blur = true;
                     if (self.$vld.valid && self.data.content) {
-                        if (self.isUpdate) {
+                        if (self.$route.params.id) {
                             self.$http.put('article/' + self.$route.params.id, self.data).then(function (response) {
                                 Util.successAndRedirect(self, '/article', '更新成功');
                             })

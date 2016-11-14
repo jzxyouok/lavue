@@ -18,7 +18,14 @@ export default function (router) {
                     type: 'error',
                     padding: 10,
                     timer: 1700
-                });
+                }).done();
+
+                /**
+                 * TODO 由于下面以直接抛出异常的方式来终止页面继续往下执行，
+                 * 导致app.vue中定义的拦截器无法正常，因此在此隐藏loading，之后再进行优化
+                 */
+                router.app.showLoading = false;
+
                 // 直接抛出错误停止向下运行
                 throw new Error('获取服务器数据失败，请稍后再试~');
             } else if (response.status == 401) {
@@ -53,7 +60,6 @@ export default function (router) {
                     response.data.hadShow = false;
                 }
             }
-            return response;
         });
     });
 }
